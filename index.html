@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        *{
+            outline: none;
+        }
+        body{
+            height: 100vh;
+        }
+        .sombra-lg{
+            box-shadow: 0.3rem 0.3rem 0.5rem rgb(0, 0, 0);
+        }
+        .sombra{
+            box-shadow: 0rem 0rem 0.3rem rgb(0, 0, 0);
+        }
+        h1, p, i{
+            filter: drop-shadow(0.2rem 0.2rem 0rem rgba(0, 0, 0, 0.475));
+        }
+    </style>
+    <title>Internet Banking</title>
+</head>
+<body class="d-flex justify-content-center align-items-center bg-dark">
+
+    <main class="bg-white p-1 rounded sombra-lg">
+        <header class="container bg-danger text-white d-flex justify-content-between align-items-baseline p-3">
+            <h1>MaBank
+                <i class="bi-bank"></i>
+            </h1>
+            <p id="nome_usuario" class="ms-auto">Olá, (Usuário)</p>
+            <button class="btn ms-2"><i class="bi bi-pencil-square text-white" onclick="editar_conta()"></i></button>
+        </header>
+
+        <section class="container mt-2 pt-2 bg-dark d-flex align-items-baseline justify-content-between">
+            <p class="text-white fs-2">Saldo</p>
+            <div class="d-flex align-items-baseline text-white">
+                <p id="saldo" class="fs-2">R$ ****</p>
+                <p class="btn fs-2 text-white" onclick="olho()"><i class="bi-eye-slash" id="olho"></i></p>
+            </div>
+        </section>
+
+        <section id="transferencia" class="container bg-dark mt-2">
+            <p class="text-white fs-2">Deposito/Saque</p>
+            <div class="pb-4 row d-flex justify-content-around">
+                <div class="list-group col-4">
+                    <button class="sombra list-group-item bg-danger text-white" onclick="depositar()">Depositar</button>
+                    <input type="number" name="numdepositar" id="input_depositar" placeholder="0,00" class="list-group-item">
+                </div>
+                <div class="list-group col-4">
+                    <button class="sombra list-group-item bg-danger text-white" onclick="sacar()">Sacar</button>
+                    <input type="number" name="numsacar" id="input_sacar" placeholder="0,00" class="list-group-item">
+                </div>
+            </div>
+        </section>
+
+        <section id="pix" class="container bg-dark mt-2 text-white">
+            <p class="text-white fs-2">Pix</p>
+            <div class="pb-4 row d-flex justify-content-around">
+                <div class="list-group col-4 ">
+                    <button class="sombra list-group-item bg-danger text-white disabled">Código Pix</button>
+                    <input type="text" name="txtcodigopix" id="input_codigopix" placeholder="E-mail, Celular, CPF etc.." class="list-group-item">
+                </div>
+                <div class="list-group col-4">
+                    <button class="sombra list-group-item bg-danger text-white" onclick="mandarpix()">Enviar</button>
+                    <input type="number" name="" id="input_valorpix" placeholder="0,00" class="list-group-item">
+                </div>
+            </div>
+        </section>
+        
+        <section id="pix" class="container bg-dark mt-2 text-white">
+            <p class="text-white fs-2">Em progresso</p>
+            <div class="pb-4 row d-flex justify-content-around">
+                <div class="list-group col-8 ">
+                    <button class="sombra list-group-item bg-danger text-white disabled">???</button>
+                    <input type="text" name="txtcodigopix" id="input_codigopix" placeholder="???" class="list-group-item">
+                </div>
+            </div>
+        </section>
+
+        <footer class="container bg-danger mt-2 p-1">
+            <p class="text-white text-center fst-italic pt-2">Matheus P. Souza
+                <i class="bi-c-circle"></i>
+            </p>
+        </footer>
+    </main>
+
+    <script src="usuario.js" defer></script>
+    <script src="saldo.js" defer></script>
+    <script src="deposito_saque.js" defer></script>
+    <script src="pix.js" defer></script>
+    <script src="validarsenha.js" defer></script>
+</body>
+</html>
