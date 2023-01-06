@@ -2,7 +2,7 @@ function mandarpix(){
     if(senha != '0000000' && senha != ''){
         const codigopix = document.querySelector('#input_codigopix').value;
         if(codigopix == ''){
-            alert('codigo pix não pode estar vazio!');
+            alert('Codigo pix não pode estar vazio!');
         } else{
             let senha_confirmada = window.prompt('Confirme a senha da conta!')
             if(validarsenha(senha_confirmada) == true){

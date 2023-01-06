@@ -1,9 +1,14 @@
 function depositar(){
     const olho = document.querySelector('#olho');
     valor = Number(document.querySelector('#input_depositar').value);
-    saldo += valor;
-    if(olho.classList[0] != 'bi-eye-slash'){
-        atualizar_saldo();
+    if(valor <= 0 ){
+        alert('Deposito não pode ser negativo!')
+    } else{
+        saldo += valor;
+        alert('Deposito efetuado!')
+        if(olho.classList[0] != 'bi-eye-slash'){
+            atualizar_saldo();
+        }
     }
 }
 function sacar(){
@@ -24,6 +29,6 @@ function sacar(){
             }
         }
     } else {
-        alert('Senha para saque não cadastrada!')
+        alert('Senha para saque não cadastrada!\nVá até o icone ao lado do (Usuario) para cadastrar.')
     }
 }

@@ -1,0 +1,15 @@
+*{
+    outline: none;
+}
+.sombra-lg{
+    box-shadow: 0.3rem 0.3rem 0.5rem rgb(0, 0, 0);
+}
+.sombra{
+    box-shadow: 0rem 0rem 0.3rem rgb(0, 0, 0);
+}
+h1, p, i{
+    filter: drop-shadow(0.2rem 0.2rem 0rem rgba(0, 0, 0, 0.475));
+}
+.altura{
+    height: 12rem;
+}

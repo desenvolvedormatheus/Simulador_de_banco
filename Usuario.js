@@ -7,7 +7,15 @@ function editar_conta(){
     } else{
         let pergunta_nome = window.prompt('Quer editar o nome?\n[s] [n]');
         if(pergunta_nome == 's'){
-            nome = window.prompt('Novo nome');
+            nome_aux = window.prompt('Novo nome');
+            if(nome_aux == '' || nome_aux == nome){
+                alert('Nome não alterado.')
+            } else{
+                nome = nome_aux
+                alert('Nome alterado')
+            }
+        } else{
+            alert('Nome não foi alterado');
         }
     }
     
@@ -17,7 +25,9 @@ function editar_conta(){
         if(pergunta_senha == 's'){
             senha = window.prompt('Crie uma senha para saque\nMaximo de caracteres 6');
             alert('Senha atualizada!')
-        }    
+        } else {
+            alert('A senha não foi alterada.')
+        }
     }
 
     while(senha.length > 6 || senha == ''){
