@@ -1,6 +1,9 @@
 *{
     outline: none;
 }
+body{
+    height: 100vh;
+}
 .sombra-lg{
     box-shadow: 0.3rem 0.3rem 0.5rem rgb(0, 0, 0);
 }
